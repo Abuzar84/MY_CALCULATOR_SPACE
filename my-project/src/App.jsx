@@ -1,10 +1,20 @@
-// import { useState } from 'react';
+import { StrictMode } from "react";
+import { BrowserRouter as Router, Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
-
+function Rendering(){
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App/>}></Route>
+        <Route path="/Calculator" element={<Calculator/>}></Route>
+      </Routes>
+    </BrowserRouter> 
+  )
+}
+function Header(){
   return (
     <>
-      <header className="bg-red-500 text-3xl font-bold text-center text-white">
+    <header className="bg-red-500 text-3xl font-bold text-center text-white">
         <h1 className="p-2">My Calculator Space</h1>
         <div className="bg-yellow-200 text-base flex overflow-x-auto justify-center">
           <span className="bg-gray-300 border-black border-2 cursor-pointer">&ensp;Home&ensp;</span>
@@ -16,6 +26,49 @@ function App() {
           <span className="bg-gray-300 border-black border-2 cursor-pointer">&ensp;BMI Calculator&ensp;</span>
         </div>
       </header>
+    </>
+  )
+}
+function Footer(){
+  return (
+    <>
+      <footer className="bg-black text-white text-center pt-2">
+        <div className="flex justify-center gap-8">
+          <div>
+            <h2>My Calculator Space</h2>
+            <p>Your reliable tool for everyday calculations.</p>
+          </div>
+          <div>
+            <h2>Quick Links</h2>
+            <span>Home&ensp;</span>
+            <span>About Us&ensp;</span>
+            <span>Privacy Policy&ensp;</span>
+          </div>
+          <div>
+            <h2>Follow Us</h2>
+            <span>Facebook&ensp;</span>
+            <span>Instagram&ensp;</span>
+            <span>Twitter&ensp;</span>
+          </div>
+          <div>
+            <h2>Contact Us</h2>
+            <span>Email: customer@mycalculatorspace.in</span>
+          </div>
+        </div>
+        <div className="border-t">
+          &copy;{new Date().getFullYear()} My Calculator Space. All rights reserved.
+        </div> 
+      </footer>
+    </>
+  )
+}
+function App() {
+
+  return (
+    <>
+      <StrictMode>
+        <Header />
+      </StrictMode>
       <main>
         <div className="p-2 flex flex-wrap justify-center gap-10">
           <div className="text-center">
@@ -51,8 +104,23 @@ function App() {
           <p>Welcome to My Calculator Space, your go-to destination for free online calculators. Whether you're a student, a professional, or just someone who needs to crunch some numbers, we've got you covered. Our calculators are designed to be user-friendly and efficient, providing you with quick and accurate results. From basic arithmetic to complex mathematical operations, you can find the right tool for your needs. Explore our range of calculators and simplify your calculations today!</p>
         </div>
       </main>
+      <StrictMode>
+        <Footer/>
+      </StrictMode>
     </>
   );
 }
-
-export default App;
+function Calculator(){
+  <>
+  <StrictMode>
+    <Header/>
+  </StrictMode>
+  <main>
+    Calc
+  </main>
+  <StrictMode>
+    <Footer/>
+  </StrictMode>
+  </>
+}
+export default Rendering;
