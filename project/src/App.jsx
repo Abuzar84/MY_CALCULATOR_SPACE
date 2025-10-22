@@ -1,32 +1,19 @@
-import { BrowserRouter } from 'react-router-dom'
-
-function Home() {
-  return <h1>Home Page</h1>;
-}
-
-function About() {
-  return <h1>About Page</h1>;
-}
-
-function Contact() {
-  return <h1>Contact Page</h1>;
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "./Home"
+import Calculator from './Calculator';
+import Layout from './Layout';
 
 function App() {
   return(
     <>
-    <BrowserRouter>
-      <nav>
-          <Link to="/">Home</Link> |{" "}
-          <Link to="/about">About</Link> |{" "}
-          <Link to="/contact">Contact</Link>
-      </nav>
+    <Router>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+        <Route path='/' element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path='/Calculator' element={<Calculator/>} />
+        </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
     </>
   )
 }
