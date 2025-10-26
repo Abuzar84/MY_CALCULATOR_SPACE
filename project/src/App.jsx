@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./Home"
 import Calculator from './Calculator';
-import About from './about.jsx'
+import About from './about.jsx';
+import PrivacyPolicy from './privacypolicy.jsx';
+import Expo from './expo.jsx';
 import Layout from './Layout';
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path='/Calculator' element={<Calculator/>} />
           <Route path='/about' element={<About/>} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
+          <Route path='/expo' element={<Expo/>} />
         </Route>
       </Routes>
     </Router>
