@@ -11,9 +11,12 @@ function Footer(){
                    <p>Your reliable tool for everyday calculations.</p>
                 </div>
                 <div className='text-center'>
-                    <nav>
+                    <nav className=''>
                         <h2>Quick Links</h2>
-                        <Link to='/'>Home</Link>
+                        <div className='flex gap-2'> 
+                            <Link to='/'>Home</Link>
+                            <Link to='/about'>About Us</Link>
+                        </div> 
                     </nav>
                 </div>
                 <div className='text-center'>
